@@ -5,15 +5,17 @@
 </p>
 
 # CustomThread
-This class is intended to show a Loading image on the device's screen.
+Class to facilitate the creation of Anonymous Threads in your project
 
 ## Installation
 Just register in the Library Path of your Delphi the path of the SOURCE folder of the library, or if you prefer, you can use Boss (dependency manager for Delphi) to perform the installation:
 ```
-boss install github.com/adrianosantostreina/Loading
+boss install github.com/adrianosantostreina/CustomThread
 ```
 
 ##  ⚡️ Quickstart
+The CustomThread unit has a TLib class that implements the CustomThread method. It has the following parameters:
+
 ```delphi
 class procedure TLib.CustomThread(
       AOnStart, 
@@ -122,8 +124,8 @@ end;
 ```
 
 ## Documentation Languages
-[English (en)](https://github.com/adrianosantostreina/Loading/blob/main/README.md)<br>
-[Português (ptBR)](https://github.com/adrianosantostreina/Loading/blob/main/README-ptBR.md)<br>
+[English (en)](https://github.com/adrianosantostreina/CustomThread/blob/main/README.md)<br>
+[Português (ptBR)](https://github.com/adrianosantostreina/CustomThread/blob/main/README-ptBR.md)<br>
 
 ## ⚠️ License
 `CustomThread` is free and open-source library licensed under the [MIT License](https://github.com/adrianosantostreina/CustomThread/blob/main/LICENSE.md). 
