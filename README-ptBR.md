@@ -35,7 +35,7 @@ class procedure TLib.CustomThread(
 </ul>
 
 ## Usar
-Declare Loading na seção Uses da unidade onde você deseja fazer a chamada para o método da classe.
+Declare CustomThread na seção Uses da unit onde você deseja fazer a chamada para o método da classe.
 ```delphi
 uses
   CustomThread,
