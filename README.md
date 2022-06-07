@@ -14,34 +14,76 @@ boss install github.com/adrianosantostreina/Loading
 ```
 
 ## Use
-Use
 Declare Loading in the Uses section of the unit where you want to make the call to the class's method.
 ```delphi
-use
-   Loading; 
+uses
+  CustomThread,
+
 ```
-
-<ul>
-  <li>Drag a TButtom control onto the Form</li>
-  <li>Drag a TTimer control onto the Form*</li>
-  <li>Set Enable property to False in TTimer</li>
-  <li>Code TButtom's OnClick event as below</li>
-  <li>Code Ttimer's OnTimer event as below</li>
-</ul>
-
-*The use of Timer in this example is merely didactic, prefer to use TThreads instead of Timers
 
 ```delphi
 procedure TForm2.Button1Click(Sender: TObject);
 begin
-  TLoading.Show('Loading customer...');
-  Timer1.Enabled := True;
+  TLib.CustomThread(
+    procedure()
+    begin
+      //Processes to run before the main process
+    end,
+    procedure()
+    begin
+      //Main Process
+    end,
+    procedure()
+    begin
+      //Processes to run after the main process
+    end,
+    procedure(const AException: string)
+    begin
+      //Process to run if errors occur
+    end,
+    True
+  );
 end;
+```
 
-procedure TForm2.Timer1Timer(Sender: TObject);
+### Like This
+
+```delphi
+procedure TForm2.Button1Click(Sender: TObject);
 begin
-  TLoading.Hide;
-  Timer1.Enabled := False;
+  TLib.CustomThread(
+    procedure()
+    begin
+      //Processes to run before the main process
+      StepUnit := (recBack.Width / 10);
+      recProgress.Width := Step;
+    end,
+    procedure()
+    begin
+      //Main Process
+      repeat
+        Step := Step + StepUnit;
+        TThread.Synchronize(
+          TThread.CurrentThread,
+          procedure ()
+          begin
+            Sleep(100);
+            recProgress.Width := Step;
+          end
+        );
+      until recProgress.Width >= recBack.Width;
+    end,
+    procedure()
+    begin
+      //Processes to run after the main process
+      Step := 0;
+    end,
+    procedure(const AException: string)
+    begin
+      //Process to run if errors occur
+    end,
+    True
+  );
 end;
 ```
 

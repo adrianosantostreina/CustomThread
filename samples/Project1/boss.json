@@ -1,0 +1,11 @@
+{
+	"name": "Project1",
+	"description": "",
+	"version": "1.0.0",
+	"homepage": "",
+	"mainsrc": "./src",
+	"projects": [],
+	"dependencies": {
+		"github.com/adrianosantostreina/customthread": "^1.0.0"
+	}
+}
