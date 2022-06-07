@@ -71,55 +71,55 @@ end;
 
 ```delphi
 [...]
-    private
-      { Private declarations }
-      StepUnit: Single;
-      Step : Single;
+private
+    { Private declarations }
+    StepUnit: Single;
+    Step : Single;
 [...]
 
 
 procedure TForm2.FormCreate(Sender: TObject);
 begin
-  StepUnit := 0;
-  Step := 0;
-  recProgress.Width := 0;
+StepUnit := 0;
+Step := 0;
+recProgress.Width := 0;
 end;
 
 procedure TForm2.Button1Click(Sender: TObject);
 begin
-  TLib.CustomThread(
-    procedure()
-    begin
-      //Processes to run before the main process
-      StepUnit := (recBack.Width / 10);
-      recProgress.Width := Step;
-    end,
-    procedure()
-    begin
-      //Main Process
-      repeat
-        Step := Step + StepUnit;
-        TThread.Synchronize(
-          TThread.CurrentThread,
-          procedure ()
-          begin
-            Sleep(100);
-            recProgress.Width := Step;
-          end
-        );
-      until recProgress.Width >= recBack.Width;
-    end,
-    procedure()
-    begin
-      //Processes to run after the main process
-      Step := 0;
-    end,
-    procedure(const AException: string)
-    begin
-      //Process to run if errors occur
-    end,
-    True
-  );
+TLib.CustomThread(
+procedure()
+begin
+    //Processes to run before the main process
+    StepUnit := (recBack.Width / 10);
+    recProgress.Width := Step;
+end,
+procedure()
+begin
+    //Main Process
+    repeat
+    Step := Step + StepUnit;
+    TThread.Synchronize(
+        TThread.CurrentThread,
+        procedure ()
+        begin
+        Sleep(100);
+        recProgress.Width := Step;
+        end
+    );
+    until recProgress.Width >= recBack.Width;
+end,
+procedure()
+begin
+    //Processes to run after the main process
+    Step := 0;
+end,
+procedure(const AException: string)
+begin
+    //Process to run if errors occur
+end,
+True
+);
 end;
 ```
 
