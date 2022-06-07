@@ -49,6 +49,21 @@ end;
 ### Like This
 
 ```delphi
+[...]
+    private
+      { Private declarations }
+      StepUnit: Single;
+      Step : Single;
+[...]
+
+
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+  StepUnit := 0;
+  Step := 0;
+  recProgress.Width := 0;
+end;
+
 procedure TForm2.Button1Click(Sender: TObject);
 begin
   TLib.CustomThread(
