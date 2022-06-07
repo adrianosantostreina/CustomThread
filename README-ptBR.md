@@ -10,7 +10,7 @@ Classe para facilitar a criação de Threads Anônimos em seu projeto
 ## Instalação
 Basta cadastrar no Library Path do seu Delphi o caminho da pasta SOURCE da biblioteca, ou se preferir, você pode usar o Boss (gerenciador de dependências do Delphi) para realizar a instalação:
 ```
-chefe instale github.com/adrianosantostreina/CustomThread
+boss install github.com/adrianosantostreina/CustomThread
 ```
 
 ## ⚡️ Quickstart
