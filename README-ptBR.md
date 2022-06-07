@@ -124,7 +124,7 @@ end;
 ```
 
 ## Idiomas da documentação
-[Inglês (pt)](https://github.com/adrianosantostreina/CustomThread/blob/main/README.md)<br>
+[Inglês (en)](https://github.com/adrianosantostreina/CustomThread/blob/main/README.md)<br>
 [Português (ptBR)](https://github.com/adrianosantostreina/CustomThread/blob/main/README-ptBR.md)<br>
 
 ## ⚠️ Licença
