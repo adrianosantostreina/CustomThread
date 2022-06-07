@@ -1,0 +1,46 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object LytProgress: TLayout
+    Align = Center
+    Size.Width = 250.000000000000000000
+    Size.Height = 10.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object recBack: TRectangle
+      Align = Client
+      Fill.Color = xFF100202
+      Size.Width = 250.000000000000000000
+      Size.Height = 10.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 5.000000000000000000
+      YRadius = 5.000000000000000000
+      object recProgress: TRectangle
+        Align = Left
+        Fill.Color = claLime
+        Size.Width = 100.000000000000000000
+        Size.Height = 10.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        XRadius = 5.000000000000000000
+        YRadius = 5.000000000000000000
+      end
+    end
+  end
+  object Button1: TButton
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    TabOrder = 1
+    Text = 'Start'
+    OnClick = Button1Click
+  end
+end

@@ -1,0 +1,14 @@
+{
+	"hash": "d41d8cd98f00b204e9800998ecf8427e",
+	"updated": "2022-06-07T15:09:23.9411332-03:00",
+	"installedModules": {
+		"github.com/adrianosantostreina/customthread": {
+			"name": "customthread",
+			"version": "1.0.0",
+			"hash": "cb01af09226ee2d8b69ce683fb7a9826",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		}
+	}
+}
